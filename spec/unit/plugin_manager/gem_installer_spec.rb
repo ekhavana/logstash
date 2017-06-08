@@ -42,7 +42,7 @@ describe LogStash::PluginManager::GemInstaller do
 
       context "when we dont want the message" do
         it "doesn't display the message" do
-          expectct(subject.install(simple_gem, false, temporary_gem_home)).to be_nil
+          expect(subject.install(simple_gem, false, temporary_gem_home)).to be_nil
         end
       end
     end
