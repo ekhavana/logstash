@@ -11,10 +11,10 @@ rvm:
 jdk:
   - oraclejdk8
 env:
-  - INTEGRATION=false SPEC_OPTS="--order rand --format documentation"
-  - INTEGRATION=true SPEC_OPTS="--order rand --format documentation"
-  - INTEGRATION=false FEATURE_FLAG=persistent_queues SPEC_OPTS="--order rand --format documentation"
-  - INTEGRATION=true FEATURE_FLAG=persistent_queues SPEC_OPTS="--order rand --format documentation"
+  - INTEGRATION=false SPEC_OPTS="--order rand --format documentation" JRUBY_OPTS='--server -Xcompile.invokedynamic=false'
+  - INTEGRATION=true SPEC_OPTS="--order rand --format documentation" JRUBY_OPTS='--server -Xcompile.invokedynamic=false'
+  - INTEGRATION=false FEATURE_FLAG=persistent_queues SPEC_OPTS="--order rand --format documentation" JRUBY_OPTS='--server -Xcompile.invokedynamic=false'
+  - INTEGRATION=true FEATURE_FLAG=persistent_queues SPEC_OPTS="--order rand --format documentation" JRUBY_OPTS='--server -Xcompile.invokedynamic=false'
 before_install:
   - sudo apt-get remove -y docker-engine
   - sudo apt-get install -y docker-engine
